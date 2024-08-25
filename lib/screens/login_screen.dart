@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
         _passwordController.text,
       );
 
-      final responseData = json.decode(response.body);
+      final responseData = json.decode(utf8.decode(response.bodyBytes));
 
       if (response.statusCode == 200) {
         final token = responseData['token'];
