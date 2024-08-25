@@ -1,0 +1,122 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d chrome --devtools-server-address http://127.0.0.1:9100/ --target /home/felipesoares/Documentos/app_completo/spaceif/lib/main.dart
+
+## exception
+
+SocketException: SocketException: Connection refused (OS Error: Connection refused, errno = 111), address = localhost, port = 46118
+
+```
+#0      _NativeSocket.startConnect (dart:io-patch/socket_patch.dart:721:35)
+#1      _RawSocket.startConnect (dart:io-patch/socket_patch.dart:1920:26)
+#2      RawSocket.startConnect (dart:io-patch/socket_patch.dart:27:23)
+#3      Socket._startConnect (dart:io-patch/socket_patch.dart:2144:22)
+#4      Socket.startConnect (dart:io/socket.dart:825:21)
+#5      _ConnectionTarget.connect (dart:_http/http_impl.dart:2491:20)
+#6      _HttpClient._getConnection.connect (dart:_http/http_impl.dart:2930:12)
+#7      _HttpClient._getConnection (dart:_http/http_impl.dart:2935:12)
+#8      _HttpClient._openUrl (dart:_http/http_impl.dart:2790:12)
+#9      _HttpClient.getUrl (dart:_http/http_impl.dart:2632:48)
+#10     ChromeConnection.getUrl (package:webkit_inspection_protocol/webkit_inspection_protocol.dart:108:33)
+#11     ChromeConnection.getTabs (package:webkit_inspection_protocol/webkit_inspection_protocol.dart:53:26)
+#12     ChromeConnection.getTab (package:webkit_inspection_protocol/webkit_inspection_protocol.dart:90:31)
+<asynchronous suspension>
+#13     Chromium.close (package:flutter_tools/src/web/chrome.dart:510:30)
+<asynchronous suspension>
+#14     ChromiumDevice.stopApp (package:flutter_tools/src/web/web_device.dart:164:5)
+<asynchronous suspension>
+#15     ResidentWebRunner._cleanup (package:flutter_tools/src/isolated/resident_web_runner.dart:203:5)
+<asynchronous suspension>
+#16     ResidentWebRunner.cleanupAtFinish (package:flutter_tools/src/isolated/resident_web_runner.dart:191:5)
+<asynchronous suspension>
+#17     ResidentRunner.waitForAppToFinish (package:flutter_tools/src/resident_runner.dart:1482:5)
+<asynchronous suspension>
+#18     RunCommand.runCommand (package:flutter_tools/src/commands/run.dart:788:26)
+<asynchronous suspension>
+#19     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1408:27)
+<asynchronous suspension>
+#20     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#21     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#22     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:420:9)
+<asynchronous suspension>
+#23     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#24     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:364:5)
+<asynchronous suspension>
+#25     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:130:9)
+<asynchronous suspension>
+#26     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:153:19)
+<asynchronous suspension>
+#27     main (package:flutter_tools/executable.dart:93:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.24.0, on Pop!_OS 22.04 LTS 6.9.3-76060903-generic, locale pt_BR.UTF-8)
+    • Flutter version 3.24.0 on channel stable at /home/felipesoares/snap/flutter/common/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 80c2e84975 (4 weeks ago), 2024-07-30 23:06:49 +0700
+    • Engine revision b8800d88be
+    • Dart version 3.5.0
+    • DevTools version 2.37.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    • Android SDK at /home/felipesoares/Android/Sdk
+    • Platform android-34, build-tools 34.0.0
+    • ANDROID_HOME = /home/felipesoares/Android/Sdk
+    • Java binary at: /opt/android-studio-2022.3.1/android-studio/jbr/bin/java
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b829.9-10027231)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at google-chrome
+
+[✓] Linux toolchain - develop for Linux desktop
+    • clang version 10.0.0-4ubuntu1
+    • cmake version 3.16.3
+    • ninja version 1.10.0
+    • pkg-config version 0.29.1
+
+[✓] Android Studio (version 2022.3)
+    • Android Studio at /opt/android-studio-2022.3.1/android-studio
+    • Flutter plugin version 77.1.1
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b829.9-10027231)
+
+[!] Android Studio (version unknown)
+    • Android Studio at /opt/android-studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    ✗ Unable to determine Android Studio version.
+    • Java version OpenJDK Runtime Environment (build 17.0.6+0-17.0.6b829.9-10027231)
+
+[✓] IntelliJ IDEA Community Edition (version 2024.1)
+    • IntelliJ at /opt/intellij-idea-community
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+
+[✓] VS Code (version 1.92.0)
+    • VS Code at /usr/share/code
+    • Flutter extension version 3.94.0
+
+[✓] Connected device (2 available)
+    • Linux (desktop) • linux  • linux-x64      • Pop!_OS 22.04 LTS 6.9.3-76060903-generic
+    • Chrome (web)    • chrome • web-javascript • Google Chrome 127.0.6533.99
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```
